@@ -8,31 +8,36 @@ bool hasDuplicates(int array[], int size);
 
 int main() {
 
-	int array1[] = { 1,2,3,2,5 };
-	int array2[] = { 5,4,3,2,1 };
+	const int size = 6;
+	int array[size];
 
-	if (isSortedIncreasing(array1, 5)) {
+	for (int i = 0; i < size; i++) {
+		cout << "Enter integer #" << i << ": ";
+			cin >> array[i];
+	}
+
+	if (isSortedIncreasing(array, 6)) {
 		cout << "The data is increasing " << endl;
 	}
 	else {
 		cout << "The data is not increasing" << endl;
 	}
 
-	if (isSortedDecreasing(array1, 5)) {
+	if (isSortedDecreasing(array, 6)) {
 		cout << "The data is decreasing " << endl;
 	}
 	else {
 		cout << "The data is not decreasing" << endl;
 	}
 	
-	if (hasAdjacentDuplicates(array2, 5)) {
+	if (hasAdjacentDuplicates(array, 6)) {
 		cout << "The data has adjacent duplicates " << endl;
 	}
 	else {
 		cout << "The data does not have adjecent duplicates" << endl;
 	}
 
-	if (hasDuplicates(array1, 5)) {
+	if (hasDuplicates(array, 6)) {
 		cout << "The data has duplicates " << endl;
 	}
 	else {
