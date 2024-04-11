@@ -3,12 +3,12 @@ using namespace std;
 
 bool isSortedIncreasing(int array[], int size);
 bool isSortedDecreasing(int array[], int size);
-//bool hasAdjacentDuplicates(int array[], int size);
+bool hasAdjacentDuplicates(int array[], int size);
 //bool hasDuplicates(int array[], int size);
 
 int main() {
 
-	int array1[] = { 1,2,3,4,5 };
+	int array1[] = { 1,2,2,4,5 };
 	int array2[] = { 5,4,3,2,1 };
 
 	if (isSortedIncreasing(array1, 5)) {
@@ -25,6 +25,12 @@ int main() {
 		cout << "The data is not decreasing" << endl;
 	}
 	
+	if (hasAdjacentDuplicates(array2, 5)) {
+		cout << "The data has adjacent duplicates " << endl;
+	}
+	else {
+		cout << "The data does not have adjecent duplicates" << endl;
+	}
 }
 
 bool isSortedIncreasing(int array[], int size) {
@@ -43,4 +49,13 @@ bool isSortedDecreasing(int array[], int size) {
 		}
 	}
 	return true;
+}
+
+bool hasAdjacentDuplicates(int array[], int size) {
+	for (int i = 0; i < size - 1; i++) {
+		if (array[i] == array[i + 1]) {
+			return true;
+		}
+	}
+	return false;
 }
